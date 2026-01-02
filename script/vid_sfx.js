@@ -109,3 +109,6 @@ featuredVideo.addEventListener("playing", hideSpinner);
 featuredVideo.addEventListener("error", () => {
     spinner.innerHTML = "⚠️ Failed to load video";
 });
+
+
+

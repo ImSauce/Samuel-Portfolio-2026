@@ -378,13 +378,25 @@ body {
     }
 }
 
+
 @media (max-width: 768px) {
-    .tool-badge {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-        /* keep bottom shadow, not left */
-        box-shadow: 0 4px 0 0 #00000027; /* smaller for mobile */
-        border-left: none; /* remove conflicting left border */
+    /* Published games adjustment */
+    .games-list .game-item {
+        grid-template-columns: 1fr; /* single column */
+        gap: 15px; /* reduce gap between image and text */
+        padding: 20px; /* smaller padding */
+    }
+
+    .games-list .game-thumbnail {
+        width: 100%;      /* full width */
+        max-width: 300px; /* optional limit */
+        margin: 0 auto;   /* center the image */
+    }
+
+    .games-list .game-info {
+        width: 100%;      /* full width */
+        text-align: center; /* optional, makes it look neat */
+        gap: 10px;         /* reduce spacing between title/desc */
     }
 
     .main-content {
