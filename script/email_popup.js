@@ -16,13 +16,8 @@ emailLink.addEventListener("click", (e) => {
             <h2>Send me a message! 🐢</h2>
             <form id="contactForm" action="https://formsubmit.co/samueljamescinco@gmail.com" method="POST">
                 <input type="hidden" name="_subject" value="New message from ur personal website!">
+
                 <input type="hidden" name="_template" value="box">
-
-                <!-- Honeypot field for spam bots -->
-                <div style="display:none;">
-                    <input type="text" name="_honey" autocomplete="off">
-                </div>
-
                 <div class="input-group">
                     <input type="text" name="name" required>
                     <label>Name</label>
@@ -41,8 +36,7 @@ emailLink.addEventListener("click", (e) => {
                 </div>
                 <button type="submit">Send</button>
 
-                <input type="hidden" name="_next" value="https://imsauce.github.io/Personal-Website-2026/html/contacts.html">
-                <input type="hidden" name="_captcha" value="false">
+                
             </form>
         `;
 
@@ -62,26 +56,10 @@ emailLink.addEventListener("click", (e) => {
             });
         });
 
-        // Simple spam/email validation before submission
+        // Form submission - let it submit naturally to formsubmit.co
         formWrapper.querySelector("form").addEventListener("submit", ev => {
-            const form = ev.target;
-            const honey = form.querySelector('input[name="_honey"]').value;
-            const email = form.querySelector('input[name="email"]').value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (honey) {
-                ev.preventDefault();
-                alert("Spam detected 🤖");
-                return false;
-            }
-
-            if (!emailRegex.test(email)) {
-                ev.preventDefault();
-                alert("Bruh, that email looks sus 😭");
-                return false;
-            }
-
-            // If all checks pass, form submits normally to formsubmit.co
+            // Remove the preventDefault to allow actual form submission
+            // The form will now POST to formsubmit.co
         });
     }
 
