@@ -76,6 +76,8 @@
     opacity: 1;
     transform: scale(1.05);
     filter: saturate(1.15) contrast(1.1);
+    box-shadow: 0 0 10px 2px rgba(75, 205, 121, 0.283); /* green glow */
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* optional slow infinite scroll for vibe */
