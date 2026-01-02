@@ -271,7 +271,10 @@ body {
     transform 0.35s cubic-bezier(.22,.61,.36,1),
     box-shadow 0.35s ease;
     will-change: transform;
+    
 }
+
+
 
 @media (max-width: 1200px) {
     .illustrations-grid {
@@ -290,6 +293,23 @@ body {
     .illustrations-grid {
         column-count: 1;
     }
+}
+
+
+/* Dark overlay */
+.illustration-item::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: #2128301e; /* 10% black */
+    transition: background 0.3s ease;
+    z-index: 2; /* above image but below hover effects if needed */
+    pointer-events: none;
+}
+
+/* On hover, remove the darkness */
+.illustration-item:hover::before {
+    background: rgba(0,0,0,0); /* fully clear */
 }
 
 
