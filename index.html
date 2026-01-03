@@ -16,7 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <!-- Home CSS -->
-    <!-- <link rel="stylesheet" href="css/home.css"> -->
+    <link rel="stylesheet" href="css/home.css">
     <!-- Loader CSS -->
     <link rel="stylesheet" href="css/loader.css">
     <!-- Scripts -->
@@ -111,7 +111,7 @@
         }
 
         .subtitle {
-          font-family: "MPLUS", sans-serif;
+            font-family: "MPLUS", sans-serif;
             font-size: clamp(1.2rem, 3vw, 1.8rem);
             font-weight: 300;
             margin-bottom: 50px;
@@ -146,57 +146,6 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-
-        
-
-        /* THE WAVE ANIMATION */
-        .wave {
-        position: fixed;      /* stick to bottom */
-        bottom: 0;
-        left: 0;
-
-        width: 100%;          /* stable width, avoids 100vw bug */
-        height: 100px;         /* <-- tweak this to adjust wave height */
-        
-        overflow: hidden;     /* prevents clipping */
-        pointer-events: none; /* so it doesn’t block clicks */
-        z-index: -1;          /* stays behind content */
-        }
-
-        /* keep your animation exactly as-is */
-        use {
-        animation: move-forever 2s linear infinite;
-        }
-
-        use:nth-child(2) {
-        animation-duration: 2.5s;
-        animation-delay: -1.5s;
-        }
-
-        use:nth-child(1) {
-        animation-duration: 5s;
-        }
-
-        @keyframes move-forever {
-        0% { transform: translate(-2px, 0); }
-        100% { transform: translate(0px, 0); }
-        }
-
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .nav-btn {
-                width: 100%;
-            }
-        }
-
     </style>
 
     <div class="loader_wrapper preload">
