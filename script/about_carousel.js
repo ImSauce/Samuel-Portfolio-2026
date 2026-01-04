@@ -66,27 +66,3 @@ document.querySelectorAll('.fluid-slide img').forEach(img => {
 });
 
 
-
-
-
-
-    const toggle = document.getElementById("toggle-anime");
-    const easterItems = document.querySelectorAll(".easter-item");
-
-    let visible = false;
-
-    toggle.addEventListener("click", () => {
-        visible = !visible;
-
-        easterItems.forEach(item => {
-            if (visible) {
-                item.style.display = "list-item";
-                requestAnimationFrame(() => item.style.opacity = "1");
-            } else {
-                item.style.opacity = "0";
-                setTimeout(() => {
-                    item.style.display = "none";
-                }, 250);
-            }
-        });
-    });
